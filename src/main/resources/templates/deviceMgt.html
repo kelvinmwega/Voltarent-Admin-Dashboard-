@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+
+<body>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:fragment="content1">
+    <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <form action="#" th:action="@{/regDevice}" th:object="${deviceForm}" method="post">
+                <div class="form-example-wrap mg-t-30">
+                    <div class="cmp-tb-hd cmp-int-hd">
+                        <h2>Enter New Device Details</h2>
+                    </div>
+                    <div class="form-example-int form-horizental">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <label class="hrzn-fm">Device ID</label>
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="nk-int-st">
+                                        <input type="text" th:field="*{id}" required id="devid" class="form-control input-sm" placeholder="Enter IMEI / MAC Address">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-example-int form-horizental mg-t-15">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <label class="hrzn-fm">SIM Number</label>
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="nk-int-st">
+                                        <input type="text" th:field="*{imsi}" required id="imsi" class="form-control input-sm" placeholder="Enter SIM Number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-example-int form-horizental mg-t-15">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <label class="hrzn-fm">Select Device Type</label>
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="nk-int-st">
+                                        <!--<div class="bootstrap-select fm-cmp-mg">-->
+                                            <!--<select id="devtype" class="devicepicker">-->
+                                                <!--<option value="semd">Solar Environment Monitor</option>-->
+                                                <!--<option value="memd">Mains Environment Monitor</option>-->
+                                                <!--<option value="emdgps">Environment Monitor GPS</option>-->
+                                                <!--<option value="emdwifi">Environment Monitor Wi-Fi</option>-->
+                                                <!--<option value="wlms">Solar Water Level Monitor</option>-->
+                                                <!--<option value="wlmm">Mains Water Level Monitor</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                        <div class="nk-int-st">
+                                            <input type="text" th:field="*{devicetype}" class="form-control input-sm" placeholder="Enter Location of Device">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-example-int form-horizental mg-t-15">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <label class="hrzn-fm">Tank Height</label>
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="nk-int-st">
+                                        <input type="text" id="tank" class="form-control input-sm" placeholder="Enter Tank height for WLMs in cm">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-example-int form-horizental mg-t-15">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <label class="hrzn-fm">Select Owner</label>
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <!--<div class="nk-int-st">-->
+                                        <!--<div class="bootstrap-select fm-cmp-mg">-->
+                                            <!--<select id="owner" class="selectpicker">-->
+                                                <!--<option value="00">Voltarent</option>-->
+                                                <!--<option value="33">Kelvin Mwega</option>-->
+                                                <!--<option value="54">Peter Mbiria</option>-->
+                                                <!--&lt;!&ndash;<option></option>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<option>Kamines</option>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<option>Austranas</option>&ndash;&gt;-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="nk-int-st">
+                                        <input type="text" th:field="*{deviceowner}" class="form-control input-sm" placeholder="Enter Location of Device">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-example-int form-horizental mg-t-15">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <label class="hrzn-fm">Device Location</label>
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="nk-int-st">
+                                        <input type="text" th:field="*{location}" class="form-control input-sm" placeholder="Enter Location of Device">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-example-int mg-t-15">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                            </div>
+                            <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                <input class="btn btn-success notika-btn-success" value="Submit" type="submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+    </div>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:fragment="content2">
+    This is Content 2
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<title>Thrivy</title>-->
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div th:replace="fragments/header-list :: header-list"/>
+
+<div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-windows"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Devices </h2>
+                                    <p>Add New Device. Enter Details in the form below <span class="bread-ntd"> .. </span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="normal-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <form action="#" th:action="@{/addDevice}" th:object="${deviceForm}" method="post">
+                            <div class="form-example-wrap mg-t-30">
+                                <div class="cmp-tb-hd cmp-int-hd">
+                                    <h2>Enter New Device Details</h2>
+                                </div>
+                                <div class="form-example-int form-horizental">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                                <label class="hrzn-fm">Device ID</label>
+                                            </div>
+                                            <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                                <div class="nk-int-st">
+                                                    <input type="text" th:field="*{id}" required id="devid" class="form-control input-sm" placeholder="Enter IMEI / MAC Address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-example-int form-horizental mg-t-15">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                                <label class="hrzn-fm">SIM Number</label>
+                                            </div>
+                                            <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                                <div class="nk-int-st">
+                                                    <input type="text" th:field="*{imsi}" required id="imsi" class="form-control input-sm" placeholder="Enter SIM Number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-example-int form-horizental mg-t-15">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                                <label class="hrzn-fm">Select Device Type</label>
+                                            </div>
+                                            <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                                <div class="nk-int-st">
+                                                    <div class="bootstrap-select fm-cmp-mg">
+                                                    <select id="devtype" class="devicepicker" th:field="*{devicetype}">
+                                                        <!--<option value="">Select Device Type</option>-->
+                                                        <option th:each="devicetype : ${devicetypes}"
+                                                                th:value="${devicetype.id}"
+                                                                th:text="${devicetype.name}"></option>
+                                                    </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-example-int mg-t-15">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                            <!--<input class="btn notika-btn-success" value="Submit" type="submit">-->
+                                        </div>
+                                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                            <button type="submit" class="btn btn-success notika-btn-success waves-effect">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
